@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificate</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Oswald", sans-serif;
+        padding: 0;
+        margin: 0;
+      }
+      .cert-outer {
+        width: 900px;
+        background: #1c3a5f;
+        padding: 24px;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+      }
+      .cert-bg {
+        background-color: #ebebeb;
+        background-image: url("");
+        background-size: cover;
+        background-position: center;
+        padding: 14px;
+      }
+      .cert-inner {
+        border: 1.5px solid #7a92ae;
+        padding: 28px 50px 36px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .cert-inner::before,
+      .cert-inner::after,
+      .c-tr,
+      .c-bl {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border: 3px solid #1c3a5f;
+      }
+      .cert-inner::before {
+        top: -5px;
+        left: -5px;
+        border-right: none;
+        border-bottom: none;
+      }
+      .cert-inner::after {
+        bottom: -5px;
+        right: -5px;
+        border-left: none;
+        border-top: none;
+      }
+      .c-tr {
+        top: -5px;
+        right: -5px;
+        border-left: none;
+        border-bottom: none;
+      }
+      .c-bl {
+        bottom: -5px;
+        left: -5px;
+        border-right: none;
+        border-top: none;
+      }
+      .logo {
+        width: 100%;
+        height: 125px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+      .logo img {
+        width: auto;
+        height: 100%;
+        max-width: 360px;
+        object-fit: contain;
+      }
+      .top-right-logo {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        height: 80px;
+        width: auto;
+        object-fit: contain;
+        z-index: 10;
+      }
+      .ribbon-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 4px;
+        width: 100%;
+      }
+      .certificate-band {
+        width: 340px;
+        height: auto;
+        object-fit: contain;
+      }
+      .of-completion {
+        font-family: "Oswald", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        color: #9a6a1f;
+        text-transform: uppercase;
+        margin-top: 12px;
+        margin-bottom: 9px;
+      }
+      .presented-to {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #2a2a2a;
+        margin-bottom: 10px;
+      }
+      .cert-name {
+        font-size: 26px;
+        font-weight: 400;
+        color: #1c1c1c;
+        text-align: center;
+        margin-bottom: 12px;
+        line-height: 1.3;
+        max-width: 600px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .divider {
+        width: 100%;
+        height: 1px;
+        background: #aaaaaa;
+        margin-top: 10px;
+        margin-bottom: 16px;
+      }
+      .body-text {
+        text-align: center;
+        font-size: 13px;
+        color: #3a3a3a;
+        line-height: 1.75;
+        margin-bottom: 24px;
+      }
+      .footer {
+        width: 100%;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        align-items: flex-end;
+        padding: 0 40px;
+      }
+      .f-block {
+        text-align: center;
+        min-width: 160px;
+      }
+      .f-block:last-child {
+        text-align: right;
+      }
+      .f-block:last-child .f-value-company,
+      .f-block:last-child .f-value,
+      .f-block:last-child .f-label {
+        text-align: center;
+        display: inline-block;
+        min-width: 160px;
+      }
+      .f-block:first-child {
+        text-align: left;
+      }
+      .f-block:first-child .f-value,
+      .f-block:first-child .f-label {
+        text-align: center;
+        display: inline-block;
+        min-width: 160px;
+      }
+      .f-value {
+        font-family: "Oswald", sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        color: #1c1c1c;
+        padding-bottom: 6px;
+        border-bottom: 1.5px solid #888;
+        margin-bottom: 6px;
+        display: block;
+      }
+      .f-value-company {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1c1c1c;
+        padding-bottom: 6px;
+        border-bottom: 1.5px solid #888;
+        margin-bottom: 6px;
+        display: block;
+      }
+      .f-label {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: #555;
+      }
+      .medal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cert-outer" id="certificateContent">
+      <div class="cert-bg">
+        <div class="cert-inner">
+          <div class="c-tr"></div>
+          <div class="c-bl"></div>
+
+          <img
+            src="images/download-removebg-preview.png"
+            alt="Top Right Logo"
+            class="top-right-logo"
+            onerror="this.style.display = 'none'"
+          />
+
+          <div class="logo">
+            <img
+              src="images/Logo-removebg-preview.png"
+              alt="Logo"
+              onerror="this.style.display = 'none'"
+            />
+          </div>
+
+          <div class="ribbon-wrap">
+            <img
+              src="images/Final_Certificate_Band-removebg-preview.png"
+              alt="Certificate Band"
+              class="certificate-band"
+              onerror="this.style.display = 'none'"
+            />
+          </div>
+
+          <div class="of-completion">Of Completion</div>
+          <div class="presented-to">
+            This Certificate Is Proudly Presented To
+          </div>
+          <div class="cert-name" id="certName">__CERT_NAME__</div>
+          <div class="divider"></div>
+
+          <div class="body-text">
+            <div>
+              in recognition for the heartfelt commitment to delivering joy to
+              customers and sharing
+            </div>
+            <div>moments that make the Tata Group proud.</div>
+            <div>
+              Thank you for consistently delivering elevated experiences to your
+              customers.
+            </div>
+          </div>
+
+          <div class="footer">
+            <div
+              class="f-block"
+              style="text-align: center; position: relative; right: 45px"
+            >
+              <span
+                class="f-value-company"
+                style="
+                  border-bottom-color: transparent;
+                  font-size: 16px;
+                  font-weight: 700;
+                  color: #1c1c1c;
+                  line-height: 1.4;
+                  white-space: nowrap;
+                "
+                >Customer Centricity Team, Tata Sons</span
+              >
+              <span class="f-label" style="visibility: hidden">Amazon</span>
+              <span id="id1" style="display: none">29-Mar-2026</span>
+            </div>
+
+            <div class="medal">
+              <img
+                src="images/Final_Ribbon-removebg-preview.png"
+                alt="Medal"
+                style="width: 110px; height: auto; object-fit: contain"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+
+            <div
+              class="f-block"
+              style="text-align: center; position: relative; bottom: 35px"
+            >
+              <span style="font-size: 15px; font-weight: 700; color: #1c1c1c"
+                >#MCS2026</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

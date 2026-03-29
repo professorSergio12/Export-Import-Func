@@ -2,9 +2,14 @@ import { useState } from 'react'
 import './App.css'
 import Import from './page/import.jsx'
 import ExportExcel from './page/exportExcel.jsx'
+import Download from './page/download.jsx'
 
 function App() {
   const [tab, setTab] = useState('import')
+
+  let page = <Download />
+  if (tab === 'import') page = <Import />
+  if (tab === 'export') page = <ExportExcel />
 
   return (
     <div className="app-shell">
@@ -25,8 +30,17 @@ function App() {
         >
           Export
         </button>
+        <button
+          type="button"
+          className="app-nav__btn"
+          aria-current={tab === 'download' ? 'page' : undefined}
+          onClick={() => setTab('download')}
+        >
+          Download
+        </button>
       </nav>
-      {tab === 'import' ? <Import /> : <ExportExcel />}
+
+      {page}
     </div>
   )
 }

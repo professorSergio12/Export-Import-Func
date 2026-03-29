@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './import.css';
 
-const baseUrl = import.meta.env.VITE_API_URL;
+const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 function ExcelIcon() {
   return (

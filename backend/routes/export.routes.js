@@ -1,8 +1,10 @@
 import express from 'express';
 const router = express.Router();
 
-import { exportFile } from '../controller/export.controller.js';
+import { exportExcel, exportPdf, generateDocx } from '../controller/export.controller.js';
 
-router.get('/excel', exportFile);
+router.get('/excel', exportExcel);
+router.post('/pdf', exportPdf);
+router.post('/docx', generateDocx);
 
 export default router;  
